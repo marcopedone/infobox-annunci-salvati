@@ -1,0 +1,115 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        :root {
+            --step--2: clamp(0.61rem, calc(0.53rem + 0.38vw), 0.80rem);
+            --step--1: clamp(0.73rem, calc(0.62rem + 0.53vw), 1.00rem);
+            --step-0: clamp(0.88rem, calc(0.73rem + 0.73vw), 1.25rem);
+            --step-1: clamp(1.05rem, calc(0.85rem + 1.00vw), 1.56rem);
+            --step-2: clamp(1.26rem, calc(0.99rem + 1.35vw), 1.95rem);
+            --step-3: clamp(1.51rem, calc(1.15rem + 1.81vw), 2.44rem);
+            --step-4: clamp(1.81rem, calc(1.33rem + 2.41vw), 3.05rem);
+            --step-5: clamp(2.18rem, calc(1.54rem + 3.20vw), 3.82rem);
+        }
+
+
+
+        /*
+        .scatola {
+            max-width: 900px;
+            max-height: 500px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-inline: auto;
+            justify-content: center;
+        }
+
+        .oggetti {
+            border: 1px solid black;
+            border-radius: 15px;
+            padding-inline: 5px;
+            background-color: aqua;
+            height: fit-content;
+            max-width: 280px;
+
+        }*/
+
+
+
+        .flex-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: normal;
+            border: 1px solid black;
+            border-radius: 15px;
+            max-width: 900px;
+            margin-inline: auto;
+            padding: 10px;
+            gap: 10px;
+        }
+
+        .flex-items {
+            flex: 1;
+            flex-basis: 270px;
+            align-self: auto;
+            border: 1px solid black;
+            border-radius: 15px;
+            padding-inline: 5px;
+            background-color: aqua;
+            height: fit-content;
+            text-align: center;
+
+        }
+
+        h3 {
+            margin: 10px 0 0 5px;
+            font-size: var(--step-1);
+        }
+
+        h4 {
+            margin: 10px 0 10px 5px;
+            font-size: var(--step--0);
+
+        }
+    </style>
+</head>
+
+
+<body>
+    <div class="flex-container">
+        <div class="flex-items">
+            <h4>icona</h4>
+            <h3>Registrati gratuitamente</h3>
+
+        </div>
+        <div class="flex-items">
+            <h4>icona</h4>
+            <h3>Salva gli immobili</h3>
+        </div>
+
+        <div class="flex-items">
+            <h4>icona</h4>
+            <h3>Acquista il pack</h3>
+
+        </div>
+        <div class="flex-items">
+            <h4>icona</h4>
+            <h3>Contatta i proprietari</h3>
+
+        </div>
+        <div class="flex-items">
+            <h4>icona</h4>
+            <h3>Effettua la visita</h3>
+
+        </div>
+        <div class="flex-items">
+            <h4>icona</h4>
+            <h3>Blocca l'immobile</h3>
+
+        </div>
+    </div>
+
+
+</body>
