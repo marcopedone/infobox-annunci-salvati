@@ -1,115 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <style>
-        :root {
-            --step--2: clamp(0.61rem, calc(0.53rem + 0.38vw), 0.80rem);
-            --step--1: clamp(0.73rem, calc(0.62rem + 0.53vw), 1.00rem);
-            --step-0: clamp(0.88rem, calc(0.73rem + 0.73vw), 1.25rem);
-            --step-1: clamp(1.05rem, calc(0.85rem + 1.00vw), 1.56rem);
-            --step-2: clamp(1.26rem, calc(0.99rem + 1.35vw), 1.95rem);
-            --step-3: clamp(1.51rem, calc(1.15rem + 1.81vw), 2.44rem);
-            --step-4: clamp(1.81rem, calc(1.33rem + 2.41vw), 3.05rem);
-            --step-5: clamp(2.18rem, calc(1.54rem + 3.20vw), 3.82rem);
+        html {
+            height: 100%;
         }
 
+        body {
+            padding: 0;
+            margin: 0;
+            font-family: 'Fjalla One', sans-serif;
+            background: linear-gradient(#fff, #fefefe, #eaeaea);
+        }
 
-
-        /*
-        .scatola {
+        .accordion {
             max-width: 900px;
-            max-height: 500px;
+            background: rgba(0, 0, 0, 0.10);
+            height: 200px;
+            margin: 20px auto;
             display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-inline: auto;
-            justify-content: center;
+            box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.47);
+            flex-direction: row;
+            cursor: pointer;
+            margin-bottom: 100px;
         }
 
-        .oggetti {
-            border: 1px solid black;
-            border-radius: 15px;
-            padding-inline: 5px;
-            background-color: aqua;
-            height: fit-content;
-            max-width: 280px;
-
-        }*/
-
-
-
-        .flex-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: normal;
-            border: 1px solid black;
-            border-radius: 15px;
-            max-width: 900px;
-            margin-inline: auto;
-            padding: 10px;
-            gap: 10px;
-        }
-
-        .flex-items {
+        .box {
+            position: relative;
+            height: 100%;
             flex: 1;
-            flex-basis: 270px;
-            align-self: auto;
-            border: 1px solid black;
-            border-radius: 15px;
-            padding-inline: 5px;
+            background-position: left;
+            background-size: cover;
+            transition: 1s;
+            box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.47);
+            overflow: hidden;
+        }
+
+        .box:hover {
+            flex: 4;
+            height: 250px;
+        }
+
+        .a1 {
             background-color: aqua;
-            height: fit-content;
-            text-align: center;
-
         }
 
-        h3 {
-            margin: 10px 0 0 5px;
-            font-size: var(--step-1);
+        .a2 {
+            background-color: beige;
         }
 
-        h4 {
-            margin: 10px 0 10px 5px;
-            font-size: var(--step--0);
+        .a3 {
+            background-color: blueviolet;
+        }
 
+        .a4 {
+            background-color: brown;
+        }
+
+        .a5 {
+            background-color: cornflowerblue;
+        }
+
+        .a6 {
+            background-color: coral;
+        }
+
+        p {
+            font-weight: normal;
+        }
+
+        .text {
+            position: absolute;
+            top: 5%;
+            opacity: 0;
+            padding: 10px;
+        }
+
+        .titolo {
+            position: absolute;
+            bottom: 0;
+            opacity: 1;
+            padding: 20px;
+            padding-inline: 10px;
+            font-size: 20px;
+        }
+
+        .box:hover .text {
+            opacity: 100%;
+            transition: opacity 1s;
+        }
+
+        @media screen and (max-width: 500px) {
+            body {
+                margin: 0;
+            }
+
+            .accordion {
+                flex-direction: column;
+                height: 600px;
+                box-shadow: none;
+            }
+
+            .box {
+                box-shadow: none;
+            }
+
+            .box:hover {
+                flex: 3;
+            }
         }
     </style>
 </head>
 
-
 <body>
-    <div class="flex-container">
-        <div class="flex-items">
-            <h4>icona</h4>
-            <h3>Registrati gratuitamente</h3>
 
+    <div class="accordion">
+        <div class="box a1">
+            <div class="titolo">LOGIN</div>
+            <div class="text">
+                <p>
+                    Puoi creare un account su Infoalloggi.it utilizzando la tua mail, la registrazione è gratuita e
+                    necessaria per usufruire del servizio.
+                </p>
+            </div>
         </div>
-        <div class="flex-items">
-            <h4>icona</h4>
-            <h3>Salva gli immobili</h3>
+        <div class="box a2">
+            <div class="titolo">SALVA</div>
+            <div class="text">
+                <p>
+                    Clicca sull'icona <svg xmlns="http://www.w3.org/2000/svg"
+                        class="icon icon-tabler icon-tabler-heart-plus" width="1rem" height="1rem" viewBox="0 0 24 24"
+                        stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                        <path d="M13 19l-1 1l-7.5 -7.428a5 5 0 1 1 7.5 -6.566a5 5 0 0 1 8.003 5.996"></path>
+                        <path d="M14 16h6"></path>
+                        <path d="M17 13v6"></path>
+                    </svg> negli annunci per salvarli tra i preferiti nel tuo account.
+                </p>
+                <p>Gli annunci preferiti si possono trovare nella pagina "Annunci Salvati" del tuo account.</p>
+            </div>
         </div>
-
-        <div class="flex-items">
-            <h4>icona</h4>
-            <h3>Acquista il pack</h3>
-
+        <div class="box a3">
+            <div class="titolo">ACQUISTA</div>
+            <div class="text">
+                <p>
+                    Per ottenere le informazioni dei proprietari è necessario acquistare il serivizio, trovi il nostro
+                    prezziario nella pagina "Pack".</p>
+                <p>Abbiamo diviso il prezzo in acconto e saldo per abbassare il costo iniziale della ricerca per i
+                    nostri utenti.</p>
+            </div>
         </div>
-        <div class="flex-items">
-            <h4>icona</h4>
-            <h3>Contatta i proprietari</h3>
-
+        <div class="box a4">
+            <div class="titolo">SBLOCCA</div>
+            <div class="text">
+                <p>
+                    Per contattare i proprietari richiedi i loro contatti scegliendo tra gli annunci preferiti nel tuo
+                    account.
+                </p>
+                <p>
+                    Nelle soluzioni transitorie controlleremo manualmente con i proprietari per assicurare le
+                    informazioni più aggiornate possibili.
+                </p>
+            </div>
         </div>
-        <div class="flex-items">
-            <h4>icona</h4>
-            <h3>Effettua la visita</h3>
-
+        <div class="box a5">
+            <div class="titolo">VISITA</div>
+            <div class="text">
+                <p>
+                    Visita l'immobile direttamente con il proprietario o un suo delegato.
+                </p>
+                <p>Dopo la vista ci lascierai un veloce responso sull'immobile, direttamente nel tuo account.</p>
+            </div>
         </div>
-        <div class="flex-items">
-            <h4>icona</h4>
-            <h3>Blocca l'immobile</h3>
-
+        <div class="box a6">
+            <div class="titolo">CONFERMA</div>
+            <div class="text">
+                <p>
+                    Una volta individuato l'immobile giusto per te, conferma la tua ricerca direttamente dalla pagina
+                    "Annunci Salvati".
+                </p>
+                <p>
+                    Terminata la ricerca ti chiederemo il saldo del servizio, che troverai direttamente nella tua area
+                    riservata.
+                </p>
+            </div>
         </div>
     </div>
-
-
 </body>
+
+</html>
