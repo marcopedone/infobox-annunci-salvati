@@ -11,7 +11,7 @@
             height: 100%;
         }
 
-        body {
+        .come-container {
             padding: 0;
             margin: 0;
             font-family: 'Roboto', sans-serif;
@@ -20,11 +20,12 @@
 
         .accordion {
             max-width: 900px;
-            background: rgba(0, 0, 0, 0.10);
+            background-color: transparent;
+
             height: 200px;
-            margin: 20px auto;
+            margin: 0px auto;
             display: flex;
-            box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.47);
+
             flex-direction: row;
             cursor: pointer;
             margin-bottom: 100px;
@@ -39,7 +40,8 @@
             background-size: cover;
             transition: 1s;
             overflow: hidden;
-
+            border-radius: 10px 10px 10px 10px;
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.47);
         }
 
         .box:hover {
@@ -101,9 +103,15 @@
             transition: opacity 1.5s;
         }
 
+        @media screen and (max-width: 699px) {
+            .box:hover {
+                flex: 5;
+            }
+        }
+
         @media screen and (max-width: 500px) {
-            body {
-                margin: 0;
+            .come-container {
+                margin-inline: 10px;
             }
 
             .accordion {
@@ -124,77 +132,82 @@
 </head>
 
 <body>
-
-    <div class="accordion">
-        <div class="box a1">
-            <div class="titolo">LOGIN</div>
-            <div class="text">
-                <p>
-                    Puoi creare un account su Infoalloggi.it utilizzando la tua mail, la registrazione è gratuita e
-                    necessaria per usufruire del servizio.
-                </p>
+    <div class="come-container">
+        <div class="accordion">
+            <div class="box a1">
+                <div class="titolo">LOGIN</div>
+                <div class="text">
+                    <p>
+                        Puoi creare un account su Infoalloggi.it utilizzando la tua mail, la registrazione è gratuita e
+                        necessaria per usufruire del servizio.
+                    </p>
+                </div>
             </div>
-        </div>
-        <div class="box a2">
-            <div class="titolo">SALVA</div>
-            <div class="text">
-                <p>
-                    Clicca sull'icona <svg xmlns="http://www.w3.org/2000/svg"
-                        class="icon icon-tabler icon-tabler-heart-plus" width="1rem" height="1rem" viewBox="0 0 24 24"
-                        stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                        <path d="M13 19l-1 1l-7.5 -7.428a5 5 0 1 1 7.5 -6.566a5 5 0 0 1 8.003 5.996"></path>
-                        <path d="M14 16h6"></path>
-                        <path d="M17 13v6"></path>
-                    </svg> negli annunci per salvarli tra i preferiti nel tuo account.
-                </p>
-                <p>Gli annunci preferiti si possono trovare nella pagina "Annunci Salvati" del tuo account.</p>
+            <div class="box a2">
+                <div class="titolo">SALVA</div>
+                <div class="text">
+                    <p>
+                        Clicca sull'icona <svg xmlns="http://www.w3.org/2000/svg"
+                            class="icon icon-tabler icon-tabler-heart-plus" width="1rem" height="1rem"
+                            viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <path d="M13 19l-1 1l-7.5 -7.428a5 5 0 1 1 7.5 -6.566a5 5 0 0 1 8.003 5.996"></path>
+                            <path d="M14 16h6"></path>
+                            <path d="M17 13v6"></path>
+                        </svg> negli annunci per salvarli tra i preferiti nel tuo account.
+                    </p>
+                    <p>Gli annunci preferiti si possono trovare nella pagina "Annunci Salvati" del tuo account.</p>
+                </div>
             </div>
-        </div>
-        <div class="box a3">
-            <div class="titolo">ACQUISTA</div>
-            <div class="text">
-                <p>
-                    Per ottenere le informazioni dei proprietari è necessario acquistare il serivizio, trovi il nostro
-                    prezziario nella pagina "Pack".</p>
-                <p>Abbiamo diviso il prezzo in acconto e saldo per abbassare il costo iniziale della ricerca per i
-                    nostri utenti.</p>
+            <div class="box a3">
+                <div class="titolo">ACQUISTA</div>
+                <div class="text">
+                    <p>
+                        Per ottenere le informazioni dei proprietari è necessario acquistare il serivizio, trovi il
+                        nostro
+                        prezziario nella pagina "Pack".</p>
+                    <p>Abbiamo diviso il prezzo in acconto e saldo per abbassare il costo iniziale della ricerca per i
+                        nostri utenti.</p>
+                </div>
             </div>
-        </div>
-        <div class="box a4">
-            <div class="titolo">SBLOCCA</div>
-            <div class="text">
-                <p>
-                    Per contattare i proprietari richiedi i loro contatti scegliendo tra gli annunci preferiti nel tuo
-                    account.
-                </p>
-                <p>
-                    Nelle soluzioni transitorie controlleremo manualmente con i proprietari per assicurare le
-                    informazioni più aggiornate possibili.
-                </p>
+            <div class="box a4">
+                <div class="titolo">SBLOCCA</div>
+                <div class="text">
+                    <p>
+                        Per contattare i proprietari richiedi i loro contatti scegliendo tra gli annunci preferiti nel
+                        tuo
+                        account.
+                    </p>
+                    <p>
+                        Nelle soluzioni transitorie controlleremo manualmente con i proprietari per assicurare le
+                        informazioni più aggiornate possibili.
+                    </p>
+                </div>
             </div>
-        </div>
-        <div class="box a5">
-            <div class="titolo">VISITA</div>
-            <div class="text">
-                <p>
-                    Visita l'immobile direttamente con il proprietario o un suo delegato.
-                </p>
-                <p>Dopo la vista ci lascierai un veloce responso sull'immobile, direttamente nel tuo account.</p>
+            <div class="box a5">
+                <div class="titolo">VISITA</div>
+                <div class="text">
+                    <p>
+                        Visita l'immobile direttamente con il proprietario o un suo delegato.
+                    </p>
+                    <p>Dopo la vista ci lascierai un veloce responso sull'immobile, direttamente nel tuo account.</p>
+                </div>
             </div>
-        </div>
-        <div class="box a6">
-            <div class="titolo">CONFERMA</div>
-            <div class="text">
-                <p>
-                    Una volta individuato l'immobile giusto per te, conferma la tua ricerca direttamente dalla pagina
-                    "Annunci Salvati".
-                </p>
-                <p>
-                    Terminata la ricerca ti chiederemo il saldo del servizio, che troverai direttamente nella tua area
-                    riservata.
-                </p>
+            <div class="box a6">
+                <div class="titolo">CONFERMA</div>
+                <div class="text">
+                    <p>
+                        Una volta individuato l'immobile giusto per te, conferma la tua ricerca direttamente dalla
+                        pagina
+                        "Annunci Salvati".
+                    </p>
+                    <p>
+                        Terminata la ricerca ti chiederemo il saldo del servizio, che troverai direttamente nella tua
+                        area
+                        riservata.
+                    </p>
+                </div>
             </div>
         </div>
     </div>
